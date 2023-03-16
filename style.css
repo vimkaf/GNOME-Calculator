@@ -1,0 +1,202 @@
+:root {
+    --body-bg: rgb(30, 33, 40);
+    --btn-color: rgb(75, 77, 83);
+    --btn-bg-color: rgb(52, 55, 61);
+    --btn-text-color: rgb(255, 255, 255);
+    --btn-digits-bg: rgb(75, 77, 83);
+    --results-bg: rgb(52, 55, 61);
+    --input-bg: rgb(41, 44, 51);
+    --results-height: 60px;
+    --results-text-color: rgb(255, 255, 255);
+}
+
+body {
+    background-color: var(--body-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-family: system-ui;
+}
+
+.wrapper {
+    min-width: 80%;
+    height: 100vh;
+    /* border:1px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+.display {
+    /* border:1px solid green; */
+    width: 100%;
+    height: 50vh;
+    /* padding: 10px; */
+
+}
+
+
+.results {
+    width: 100%;
+    height: calc(100% - var(--results-height));
+    background-color: var(--results-bg);
+    border-radius: 10px 10px 0 0;
+    color: var(--results-text-color);
+    overflow-y: scroll;
+    overflow-x:hidden ;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.result {
+    padding: 5px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 100%;
+    font-size: larger;
+    border-bottom: 1px solid #000;
+    box-sizing: border-box;
+}
+
+.result:hover{
+    cursor:pointer;
+    background-color: var(--btn-digits-bg);
+}
+
+.operation {
+    width: 60%;
+}
+
+.output {
+    width: 40%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: "...";
+}
+
+.output > span:first-child{
+    color:grey;
+}
+
+.output > span:last-child{
+    font-weight: bolder;
+}
+.input {
+    width: 100%;
+    height: var(--results-height);
+    border-radius: 0 0 10px 10px;
+    background-color: var(--input-bg);
+    color: white;
+    padding: 3px 10px;
+    box-sizing: border-box;
+}
+
+.input input {
+    background: transparent;
+    border: 0;
+    outline: none;
+    color: white;
+    width: 100%;
+    height: calc(60px / 2);
+    font-size: large;
+    font-weight: bold;
+    overflow: scroll;
+
+}
+
+.input>span {
+    display: block;
+}
+
+input:focus {
+    border: 0;
+    outline: none;
+}
+
+.buttonContainer {
+    width: 100%;
+    height: 40vh;
+    display: grid;
+    gap: 5px;
+    grid-template-columns: auto auto auto auto auto;
+}
+
+.buttonContainer button {
+    background-color: var(--btn-bg-color);
+    color: var(--btn-text-color);
+    outline: none;
+    border-radius: 10px;
+    text-align: center;
+    font-size: large;
+    border: 1px solid var(--btn-bg-color);
+    cursor: pointer;
+    width: 100%;
+}
+
+button.numeric {
+    background-color: var(--btn-digits-bg);
+    font-weight: bolder;
+}
+
+button.equals {
+    background-color: rgb(230, 97, 0);
+    grid-row-start: 4;
+    grid-row-end: 6;
+    grid-column-start: 5;
+}
+
+.buttonContainer button:hover {
+    filter: brightness(80%);
+}
+/** Breakpoint for extra small devices **/
+@media screen and (max-width:320px) {
+    body {
+        padding: 0;
+    }
+
+    .wrapper {
+        padding: 0;
+        width: 100%;
+    }
+    .buttonContainer{
+        gap:2px;
+    }
+    button{
+        font-size: small;
+        font-weight: 100;
+        text-overflow: clip;
+    }
+}
+
+/** Breakpoint for mobile **/
+
+@media screen and (min-width:320px) and (max-width:480px) {
+    body {
+        padding: 0;
+    }
+
+    .wrapper {
+        padding: 0;
+        width: 100%;
+    }
+}
+
+/** Breakpoint for medium screen up **/
+@media screen and (min-width:768px) {
+    body {
+        padding: 5px;
+    }
+
+    .wrapper {
+        padding: 0;
+        min-width: 50%;
+    }
+}

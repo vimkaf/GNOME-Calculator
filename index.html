@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="display">
+            <div class="results">
+                <div class="result">
+                    <div class="operation">
+                        <span>7 x 9</span>
+                    </div>
+                    <div class="output">
+                        <span>=</span>
+
+                        <span>63</span>
+
+                    </div>
+                </div>
+                <div class="result">
+                    <div class="operation">
+                        <span>7 x 10</span>
+                    </div>
+                    <div class="output">
+                        <span>=</span>
+
+                        <span>63</span>
+
+                    </div>
+                </div>
+                
+                
+            </div>
+            <div class="input">
+                <input autofocus type="text" name="" id="input">
+                <span class="inputErrors"></span>
+            </div>
+        </div>
+        <div class="buttonContainer">
+            <button id="clear" data-nocompute> C </button>
+            <button value="("> ( </button>
+            <button value=")"> ) </button>
+            <button value="%"> mod </button>
+            <button value="Math.PI"> π </button>
+            <button value="7" class="numeric"> 7 </button>
+            <button value="8" class="numeric"> 8 </button>
+            <button value="9" class="numeric"> 9 </button>
+            <button value="/"> ÷ </button>
+            <button value="Math.Sqrt(val)"> √ </button>
+            <button value="4" class="numeric"> 4 </button>
+            <button value="5" class="numeric"> 5 </button>
+            <button value="6" class="numeric"> 6 </button>
+            <button value="*"> × </button>
+            <button value="Math.pow"> <em>x<sup>2</sup></em> </button>
+            <button value="1" class="numeric"> 1 </button>
+            <button value="2" class="numeric"> 2 </button>
+            <button value="3" class="numeric"> 3 </button>
+            <button value="-"> - </button>
+            <button id="calc" data-nocompute class="equals"> = </button>
+            <button value="0" class="numeric"> 0 </button>
+            <button value="."> . </button>
+            <button value="/100"> % </button>
+            <button value="+"> + </button>
+
+
+        </div>
+    </div>
+    
+</body>
+</html>
